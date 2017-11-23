@@ -1,0 +1,56 @@
+@import '_config'
+
+* 
+	font-family: "Courier", non-serif
+	background: #011
+	color: #0ff
+	font-weight: 100
+	font-size: 95%
+
+input, textarea, button 
+	padding: 3px
+	height: 30px
+	border: solid 1px grey
+	+unstyle(appearance)
+	&:not(button)
+		&:hover
+			border-color: #0ff 
+			color: #fff
+		&[type="submit"], &[type="button"]
+			background: #333
+		&:focus, .active
+			background: #000
+			
+h2
+	font-size: 75%
+
+textarea 
+	+bh(350px,100px)
+
+div
+	&.h
+		font-size: 80%
+	&.entry-bg
+		+pref(box-sizing, border-box)
+		border: solid 1px grey
+		background: #222
+		color: white
+		width: 300px	
+		padding: 5px
+
+hr 
+	border: 1px solid grey
+	display: inline-block
+	width: 50%
+
+.pag- 
+	padding: 0 2px
+	&active
+		color: white
+		background: #033
+	&inactive
+		background: black
+		text-decoration: none
+		&:hover
+			color: white
+			text-decoration: overline

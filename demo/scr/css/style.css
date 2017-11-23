@@ -1,0 +1,78 @@
+* {
+  font-family: "Courier", non-serif;
+  background: #011;
+  color: #0ff;
+  font-weight: 100;
+  font-size: 95%;
+}
+
+input, textarea, button {
+  padding: 3px;
+  height: 30px;
+  border: solid 1px grey;
+  -webkit-appearance: none;
+  -khtml-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+}
+input:not(button):hover, textarea:not(button):hover, button:not(button):hover {
+  border-color: #0ff;
+  color: #fff;
+}
+input:not(button)[type="submit"], input:not(button)[type="button"], textarea:not(button)[type="submit"], textarea:not(button)[type="button"], button:not(button)[type="submit"], button:not(button)[type="button"] {
+  background: #333;
+}
+input:not(button):focus, input:not(button) .active, textarea:not(button):focus, textarea:not(button) .active, button:not(button):focus, button:not(button) .active {
+  background: #000;
+}
+
+h2 {
+  font-size: 75%;
+}
+
+textarea {
+  width: 350px;
+  height: 100px;
+}
+
+div.h {
+  font-size: 80%;
+}
+div.entry-bg {
+  -webkit-box-sizing: border-box;
+  -khtml-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+  border: solid 1px grey;
+  background: #222;
+  color: white;
+  width: 300px;
+  padding: 5px;
+}
+
+hr {
+  border: 1px solid grey;
+  display: inline-block;
+  width: 50%;
+}
+
+.pag- {
+  padding: 0 2px;
+}
+.pag-active {
+  color: white;
+  background: #033;
+}
+.pag-inactive {
+  background: black;
+  text-decoration: none;
+}
+.pag-inactive:hover {
+  color: white;
+  text-decoration: overline;
+}
+
+/*# sourceMappingURL=style.css.map */

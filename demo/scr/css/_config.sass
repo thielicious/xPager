@@ -1,0 +1,114 @@
+// "https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,600,600italic,400italic,700,800,800italic,700italic"
+$prefix: '-webkit-','-khtml-','-moz-','-ms-','-o-',''
+
+$direct: 'top','right','bottom','left'
+
+// functions
+@function c-tran($color, $opacity)
+	@return rgba($color, $color, $color, $opacity)
+	
+@function calcRem($remSize) // für IE
+	$result: $remSize / 16px
+	@return $result * 1rem
+	
+@function bc($color)
+	@return solid 1px $color
+
+// mixins
+=§($ext)
+	@extend %#{$ext}
+	
+=media($width)
+	$tablet: 'screen and (max-width : 1024px)'
+	$mob_big: 'screen and (max-width : 768px)'
+	$mob_small: 'screen and (max-width : 480px)'
+	@if $width == 'tablet'
+		@media #{$tablet} 
+			@content
+	@else if $width == 'big'
+		@media #{$mob_big}
+			@content
+	@else if $width == 'small'
+		@media #{$mob_small} 
+			@content
+			
+=unstyle($param)
+	@if $param == 'select'
+		+pref(user-select, none)
+	@else if $param == 'appearance' or 'box-shadow' or 'text-shadow' 
+		+pref($param, none)
+	@else if $param == 'focus' // moz only
+		+pref(user-focus, ignore)
+	@else if $param == 'border'
+		+border('none')
+	@else if $param == 'radius'
+		+pref(border-radius,0px)
+	@else if $param == 'outline' // chrome, moz
+		&:focus
+			outline: none
+	@else if $param == 'reset'
+		@extend %reset
+		
+=border($color, $side)
+	@if $side == 'all'
+		border: bc($color)
+	@else if $color == 'none'
+		border: 0
+	@else
+		@each $prop in $side
+			border-#{$prop}: bc($color)
+			
+=pref($prop, $val...)
+	@each $key in $prefix
+		#{$key}#{$prop}: $val
+		
+=placeholder
+	&::-webkit-input-placeholder
+		@content
+	&:-moz-placeholder 
+		@content
+	&::-moz-placeholder
+		@content
+	&:-ms-input-placeholder
+		@content
+		
+=grad($c1: transparent, $c2: transparent)
+	background: $c1
+	@each $key in $prefix
+		background: #{$key}linear-gradient($c1, $c2)
+		
+=font($s:null, $w:400)
+	font:
+		size: $s
+		weight: $w
+		
+=bh($w, $h: null)
+	@if $w == 'full'
+		width: 100%
+		height: 100%
+	@else
+		width: $w
+		height: $h
+		
+=pos($t: null, $l: null, $r: null, $b: null)
+	top: $t
+	left: $l 
+	right: $r
+	bottom: $b
+	
+=centerIMG($w, $h)
+	@extend %reset
+	+pos(50%,50%)
+	position: fixed
+	min-width: auto
+	max-width: $w
+	max-height: $h
+	transform: translate(-50%,-50%)
+	
+=linkFont($link)
+	@import url($link)
+	
+=setFont($family, $weight: null)
+	font-family: $family
+	@if $weight != null
+		font-weight: $weight
