@@ -35,16 +35,12 @@
 							$paginator->setLnkStyle("pag-active", "pag-inactive");
 							$paginator->setDivider("|", "|");
 
-							$paginator->SQLRequest(xPager\xPager::RECORDS, "
-								SELECT * FROM `entries`
-							");
-
-							echo "There are ".$paginator->getCount()." entries.<br><br>";
-
-							$paginator->SQLRequest(xPager\xPager::PAGING, "
+							$paginator->SQLRequest("
 								SELECT `postdate`, `headline`, `content` 
 									FROM `entries`
 							");
+						
+							echo "There are ".$paginator->getCount()." entries.<br><br>";
 
 							$paginator->paging(3, "page");
 							$paginator->paginate();
