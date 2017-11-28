@@ -51,7 +51,7 @@
 		public function setDivider(string $ctrl, string $pg);
 		
 		function __construct(string $host, string $user, string $pass, string $db = null);
-		public function SQLRequest($method, string $sql);
+		public function SQLRequest(string $sql);
 		public function getCount();
 		public function paging(int $limit, string $pagename = null);
 		public function paginate();
@@ -70,14 +70,13 @@
 			$displayRecords;
 
 		private 
-			$sqlRecords, $sqlPaging,
-			$limit, $offset, $page, 
-			$last, $pagevar, $count;
+			$sqlPaging, $limit, 
+			$offset, $page, 
+			$last, $pagevar, 
+			$count;
 
 		const
-			ERR = "Error ".__METHOD__.": ",
-			RECORDS = "records",
-			PAGING = "paging";
+			ERR = "Error ".__METHOD__.": ";
 
 		function __construct(string $host, string $user, string $pass, string $db = null) {
 			try {
@@ -87,17 +86,13 @@
 			}
 		}
 
-		public function SQLRequest($method, string $sql) {
-			switch ($method) {
-				case self::RECORDS : $this->sqlRecords = $sql; break;
-				case self::PAGING : $this->sqlPaging = $sql; break;
-				default: return false; break;
-			}
+		public function SQLRequest(string $sql) {
+			$this->sqlPaging = $sql;
 		}
 
 		private function count() {
 			try {
-				$sql = $this->pdo->prepare($this->sqlRecords);
+				$sql = $this->pdo->prepare($this->sqlPaging);
 				if ($sql->execute()) {
 					$this->count = $sql->rowCount();
 				} 
