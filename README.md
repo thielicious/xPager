@@ -19,7 +19,8 @@ Use your CLI and enter the following to clone:<br>
 
 ## USAGE
 
-Get the namespace:
+Get the namespace:<br>
+(Feel free to change or remove the namespace)<br>
 ```
 use Thielicious\APIs\xPager as xPager;
 ```
