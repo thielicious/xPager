@@ -1,5 +1,5 @@
 # xPager
-API for pagination
+An API for pagination
 
 <br>
 <br>
