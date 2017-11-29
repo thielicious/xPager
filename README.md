@@ -1,6 +1,5 @@
 # xPager
-##### API for pagination
----
+###### API for pagination
 
 <br>
 
@@ -28,15 +27,14 @@ Create an object:
 ```
 $paginator = new xPager\xPager("localhost", "root", "", "news_blog");
 ```
-
-Set your controller style:<br>
+Style your control bar: (optional)<br>
 ```
 $paginator->setControl(" |< ", " > ", " < ", " >| ");
 $paginator->setLnkStyle("active", "inactive");
 $paginator->setDivider("|", "|");
 ```
 
-Fetch records from a database:<br>
+Fetch records from a database table:<br>
 ```
 $paginator->SQLRequest("
   SELECT `postdate`, `headline`, `content` 
@@ -50,17 +48,15 @@ $paginator->paging(3, "page");
 $paginator->paginate();
 ```
 
-Display the records:<br>
+Display the records: (example)<br>
 ```
 foreach ($paginator->displayRecords as $rec) {
   echo 
-    "<p><div class=entry-bg>Date: ".$rec->postdate."</div>".
-    "<div class=entry-bg>Headline: ".$rec->headline."</div>".
-    "<div class=entry-bg>Content: ".$rec->content."</div></p>";
+    "<p>Date: {$rec->postdate}
+    Headline: {$rec->headline}
+    Content: {$rec->content}</p>";
 }
 ```
-
-The database is just an example.
 
 <br>
 
