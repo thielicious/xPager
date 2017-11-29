@@ -1,6 +1,7 @@
 # xPager
-###### API for pagination
+API for pagination
 
+<br>
 <br>
 
 ## INTRODUCTION
