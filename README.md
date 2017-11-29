@@ -70,7 +70,7 @@ Connects to the specified database.<br>
 <br>
 
 **xPager::setControl(string $first, string $next, string $previous, string $last)** (optional)<br>
-This method will show the content being shown to control xPager. It can be any character, image or links but usualy arrows.<br>
+This method will show the content being shown to control xPager. It can be any character, image or links but usually arrows.<br>
 * **$first** Shows the first page (default: "First")<br>
 * **$next** Will render the next available page (default: "Next")<br>
 * **$previous** Goes to the previous page by 1 step (default: "Back")<br>
@@ -118,7 +118,7 @@ This will calculate and render the pages and the control bar using the defined s
 ## ARRAY
 
 **xPager::displayRecords** (required)<br>
-This is an array containing the SQL data for each page.<br>
+This is an array containing the SQL data for each page. This should be placed at the very end.<br>
 
 <br>
 <br>
