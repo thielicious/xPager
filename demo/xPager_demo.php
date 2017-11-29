@@ -33,8 +33,6 @@
 							
 							$paginator->setControl(" |< ", " > ", " < ", " >| ");
 							$paginator->setLnkStyle("pag-active", "pag-inactive");
-							$paginator->setDivider("|", "|");
-
 							$paginator->SQLRequest("
 								SELECT `postdate`, `headline`, `content` 
 									FROM `entries`
