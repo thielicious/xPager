@@ -1,0 +1,31 @@
+{
+    "name": "Thielicious/xPager",
+    "description": "Simple pagination API in PHP",
+    "keywords": ["paginator", "pagination", "php", "xPager"],
+    "homepage": "https://thielicious.github.io",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Michel Thiel",
+            "homepage": "https://thielicious.github.io",
+            "email": "thielicious@zoho.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.6.0",
+        "ext-pcre": "*",
+        "xPager/xPager": "1.0.*"
+    },
+    "require-dev": {
+        "Thielicious/aLoad": "~1.0"
+    },
+    "suggest": {
+        "Thielicious/slimPDO": "Tweaked PDO extension"
+    },
+    "autoload": {
+        "psr-4": {
+            "Thielicious\\xPager\\": ""
+        }
+    }
+}
