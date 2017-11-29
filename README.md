@@ -29,11 +29,11 @@ Create an object:
 ```
 $paginator = new xPager\xPager("localhost", "root", "", "news_blog");
 ```
-Style your control bar: (optional)<br>
+Style your control bar:<br>
 ```
-$paginator->setControl(" |< ", " > ", " < ", " >| ");
-$paginator->setLnkStyle("active", "inactive");
-$paginator->setDivider("|", "|");
+$paginator->setControl(" |< ", " > ", " < ", " >| "); // optional
+$paginator->setLnkStyle("active", "inactive");        // required
+$paginator->setDivider("|", "|");                     // optional
 ```
 
 Fetch records from a database table:<br>
