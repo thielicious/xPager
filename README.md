@@ -66,14 +66,41 @@ The database is just an example.
 
 ## METHODS
 
-**xPager::__construct(string $host, string $user, string $pass, string $db = NULL)**
-* Connects to the specified database.<br>
+**xPager::__construct(string $host, string $username, string $password, string $db = NULL)**
+Connects to the specified database.<br>
+* $host defines the server (e.g. localhost)<br>
+* $username defines the username for your database<br>
+* $password password for the database<br>
+* $db in case if it's not yet defined, choose your database name<br>
+
 <br>
 
 **xPager::setControl(string $first, string $next, string $previous, string $last)**
-* text.<br>
+This method will show the content being shown to control xPager. It can be any character, image or links.<br>
+* $first Shows the first page<br>
+* $next Will render the next available page<br>
+* $previous Goes to the previous page by 1 step<br>
+* $last Renders the last page<br>
+
 <br>
 
+**xPager::setLnkStyle(string $active, string $inactive)** (optional)
+Styles the links using classes defined in CSS.<br>
+* $active Styles the active page number<br>
+* $inactive Styles the other page numbers<br>
+
+<br>
+
+**xPager::setDivider(string $ctrl, string $pg)** (optional)
+This will join a separator between the controllers and page numbers.<br>
+* $ctrl Separator for the controllers<br>
+* $pg Separator for the pages<br>
+
+<br>
+
+**xPager::SQLRequest(string $sql)** (optional)
+Look up data from a table.<br>
+* $sql Query requests in SQL only<br>
 
 
 <br>
